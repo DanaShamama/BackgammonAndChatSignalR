@@ -1,0 +1,52 @@
+﻿<Page x:Class="Client1.Views.Game"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Client1.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1600"
+      Title="Game" Height="800" Width="1600">
+    <Grid Name="game">
+        <Grid.Background>
+            <ImageBrush x:Name="BoardImage" ImageSource="Assets/Board2.gif"/>
+        </Grid.Background>
+
+        <Grid Name="Board" Margin="19,17,19,16.6" MouseDown="Board_MouseDown">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="cube1Button" Opacity="0" Grid.Row="5" Grid.Column="6" Margin="5,11,0.4,0.2"  Click="cube1Button_Click"/>
+            <Button HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="cube2Button" Opacity="0" Grid.Row="4" Grid.Column="6" Margin="5,11.2,0,0" Click="cube2Button_Click"/>
+            <TextBlock x:Name="BlackEttanCounter" Grid.Column="6" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Black Eaten: 0" VerticalAlignment="Top" Height="45" Width="45" FontSize="12" Foreground="#FF050505" Visibility="Collapsed" FontWeight="Bold"/>
+            <TextBlock x:Name="RedEttanCounter" Grid.Column="6" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Red Eaten: 0" VerticalAlignment="Top" Height="45" Width="45" FontSize="12" Foreground="#FFF70808" Visibility="Collapsed" FontWeight="Bold"/>
+            <TextBlock x:Name="OutBlackCounter" Grid.Column="6" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Out Black: 0" VerticalAlignment="Top" Height="45" Width="45" FontSize="14" Foreground="#FF050505" Visibility="Collapsed" FontWeight="Bold"/>
+            <TextBlock x:Name="OutRedCounter" Grid.Column="6" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Out Red: 0" VerticalAlignment="Top" Height="45" Width="45" FontSize="14" Foreground="#FFF70808" Visibility="Collapsed" FontWeight="Bold"/>
+        </Grid>
+    </Grid>
+</Page>

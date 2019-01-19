@@ -1,0 +1,48 @@
+﻿<Page x:Class="Client1.Views.ChatRegister"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Client1.Views"
+      xmlns:local11="clr-namespace:Client1.Utils"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="ChatRegister" Height="800" Width="335">
+    <Page.Resources>
+        <local11:StatusToColorConverter x:Key="statusToColorConverter"/>
+    </Page.Resources>
+    <Grid>
+        <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Height="23" Margin="70,102,0,0" TextWrapping="Wrap" Text="{Binding UserName}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="PasswordTextBox" HorizontalAlignment="Left" Height="23" Margin="70,177,0,0" TextWrapping="Wrap" Text="{Binding Password}" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Name" HorizontalAlignment="Left" Background="AliceBlue" Margin="68,76,0,0" VerticalAlignment="Top"/>
+        <Label Content="Password" HorizontalAlignment="Left" Background="AliceBlue" Margin="67,150,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.463,0.596"/>
+        <Label Content="Register and Login" Background="AliceBlue" HorizontalAlignment="Left" Margin="67,33,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.573,0.109" FontSize="20" Width="212"/>
+        <Button Content="Register" Command="{Binding ClickCommand}"  IsEnabled="{Binding EnableButtonRegister}" Background="AliceBlue" HorizontalAlignment="Left" Margin="51,250,0,0" VerticalAlignment="Top" Width="73" />
+        <Button Content="Login" Command="{Binding ClickCommandLogin}" IsEnabled="{Binding EnableButtonLogin}" Background="AliceBlue" HorizontalAlignment="Left" Margin="158,250,0,0" VerticalAlignment="Top" Width="73" />
+        <ListBox ItemsSource="{Binding UsersNamesWithStatus}" SelectedItem="{Binding SelectedName}" x:Name="LoggedInUsersListBox" HorizontalAlignment="Left" Height="179" Margin="29,415,0,0" VerticalAlignment="Top" Width="178">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="7*" />
+                        </Grid.ColumnDefinitions>
+                        <!--<Grid>-->
+                        <Ellipse Height="10" Width="10" Fill="{Binding Status, Converter={StaticResource statusToColorConverter}}" HorizontalAlignment="Left" Grid.Column="0">
+                        </Ellipse>
+                        <!--</Grid>-->
+                        <!--<Grid>-->
+                        <TextBlock Text="{Binding UserName}" HorizontalAlignment="Right"  Grid.Column="3">
+                        </TextBlock>
+                        <!--</Grid>-->
+                        <!--"{Binding UserName, Converter={StaticResource statusToColorConverter}}"-->
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Label Content="Users List" HorizontalAlignment="Left" Background="AliceBlue" Margin="70,384,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.445,-0.011"/>
+        <Button Content="Chat" Command="{Binding ClickStartChat}" Background="AliceBlue" HorizontalAlignment="Left" Margin="225,415,0,0" VerticalAlignment="Top" Width="73" />
+        <Button Content="Game" Command="{Binding ClickStartGame}" Background="AliceBlue" HorizontalAlignment="Left" Margin="225,455,0,0" VerticalAlignment="Top" Width="73" />
+        <Image x:Name="StatusConnectionColors" HorizontalAlignment="Left" Height="85" Margin="212,499,0,0" VerticalAlignment="Top" Width="122" Source="Assets/ellipses.png"/>
+    </Grid>
+</Page>

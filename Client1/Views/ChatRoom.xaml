@@ -1,0 +1,16 @@
+﻿<Window x:Class="Client1.Views.ChatRoom"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client1.Views"
+        mc:Ignorable="d"
+        Title="ChatRoom" Height="600" Width="800">
+    <Grid>
+        <Label Content="The chat is here:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Height="39" Margin="97,21,0,0" Width="176" RenderTransformOrigin="0.5,0.5"/>
+        <TextBlock Height="150" Text="{Binding ChatText}" Width="650" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#F48FB1" Margin="97,76,0,0"/>
+        <TextBox Height="70" Text="{Binding YourText}" Width="650" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#F48FB1" Margin="97,378,0,0"/>
+        <Label Content="Your text here:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="97,321,0,0" FontSize="20" Width="159" Height="40"/>
+        <Button Height="30" Content="Send" HorizontalAlignment="Left" VerticalAlignment="Top" Command="{Binding ClickCommandSend}" Background="#F48FB1" Margin="251,474,0,0" Width="300"/>
+    </Grid>
+</Window>
